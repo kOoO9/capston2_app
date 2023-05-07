@@ -1,1 +1,1 @@
-# capston-app
+# capston2-app

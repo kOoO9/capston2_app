@@ -3,5 +3,9 @@ package com.example.loginpage.retrofit
 data class jsonclass(
     val lecture_code : String?,
     val lecture_name : String?,
-    //val professors_id : String?,
+)
+
+data class lecturestudentjsonclass(
+    val student_id : Int?,
+    val student_name : String?,
 )

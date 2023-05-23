@@ -7,7 +7,12 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.loginpage.databinding.ActivityProfessorBinding
+import com.example.loginpage.retrofit.client
+import com.example.loginpage.retrofit.jsonclass
 import com.google.firebase.auth.FirebaseAuth
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class professor : AppCompatActivity() {
@@ -41,15 +46,13 @@ class professor : AppCompatActivity() {
         }
     }
 
-//    private fun setContentView(root: ConstraintLayout?) {
-//
-//    }
 
     private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent: Intent = Intent(this@professor, professorloginsuccess::class.java)
+                    val intent: Intent = Intent(this@professor, professorloginsuccess::class.java) //로그인 성공 email 아이디 확인
+                    intent.putExtra("email", email)
                     startActivity(intent)
                     finish()
                 } else {
@@ -62,5 +65,4 @@ class professor : AppCompatActivity() {
             }
     }
 }
-
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.loginpage.databinding.ActivityProfessorBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -39,6 +40,10 @@ class professor : AppCompatActivity() {
             login(email, password)
         }
     }
+
+//    private fun setContentView(root: ConstraintLayout?) {
+//
+//    }
 
     private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password)

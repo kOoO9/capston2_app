@@ -7,18 +7,36 @@
     tools:context=".retrofit.RecyclerViewbtnclick">
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="600dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/editTextDate3"
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date" />
+            android:text="23.05.24"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜"
+            android:textSize="17dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/twostUser"
@@ -26,6 +44,7 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/recyclebtnclick" />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

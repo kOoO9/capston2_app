@@ -12,32 +12,48 @@
         android:layout_height="wrap_content"
         android:background="#EAECEB"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         tools:ignore="MissingConstraints">
 
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#EAECEB"
-            android:text="학생 이름"
-            android:textColor="#000000"
-            android:textSize="17dp"
-            android:textStyle="bold" />
         <Space
             android:layout_width="20dp"
             android:layout_height="wrap_content" />
 
         <TextView
-        android:id="@+id/tv_hakbun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#EAECEB"
-        android:text="학생 학번"
-        android:textColor="#000000"
-        android:textSize="17dp"
-        android:textStyle="bold" />
+            android:id="@+id/tv_hakbun"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#EAECEB"
+            android:text="학생 학번"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#EAECEB"
+            android:text="학생 이름"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 
     </LinearLayout>

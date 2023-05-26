@@ -8,4 +8,5 @@ data class jsonclass(
 data class lecturestudentjsonclass(
     val student_id : Int?,
     val student_name : String?,
+    val attendence_mm_dd : String?,
 )

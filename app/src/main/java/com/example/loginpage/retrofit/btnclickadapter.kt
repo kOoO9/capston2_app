@@ -41,6 +41,7 @@ class btnclickadapter (var data: List<lecturestudentjsonclass>) : RecyclerView.A
         val item = data[position]
         holder.tv_hakbun.text = item.student_id?.toString()
         holder.tv_name.text = item.student_name
+        holder.tv_result.text = item.attendence_mm_dd
     }
 
     override fun getItemCount(): Int {
@@ -50,12 +51,15 @@ class btnclickadapter (var data: List<lecturestudentjsonclass>) : RecyclerView.A
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tv_hakbun: TextView = itemView.findViewById(R.id.tv_hakbun)
         val tv_name: TextView = itemView.findViewById(R.id.tv_name)
+        val tv_result: TextView = itemView.findViewById(R.id.tv_result)
+
         //스피너 만들기
         val spinner: Spinner = itemView.findViewById(R.id.spinner)
 
         fun bind(jsonClass: lecturestudentjsonclass) {
             tv_hakbun.text = jsonClass.student_id?.toString()
             tv_name.text = jsonClass.student_name
+            tv_result.text = jsonClass.attendence_mm_dd
 
         }
     }

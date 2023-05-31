@@ -1,4 +1,5 @@
 package com.example.loginpage.retrofit
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,20 +7,29 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginpage.R
 
-class btnclickadapter (var data: List<lecturestudentjsonclass>) : RecyclerView.Adapter<btnclickadapter.ViewHolder>() {
-
-    val chulsuk = listOf("출석", "결석", "지각")
+class btnclickadapter (var data: List<lecturestudentjsonclass>, var spinnerinterface: spinnerinterface) : RecyclerView.Adapter<btnclickadapter.ViewHolder>() {
+    val chulsuk = listOf("","출석", "결석", "지각")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recyclebtnclick, parent, false)
         return ViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = data[position]
+        holder.tv_hakbun.text = item.student_id?.toString()
+        holder.tv_name.text = item.student_name
+        holder.tv_result.text = item.attendence_mm_dd
+
         //스피너 생성
-        val adapter = ArrayAdapter(holder.itemView.context, android.R.layout.simple_spinner_item, chulsuk)
+        val adapter =
+            ArrayAdapter(holder.itemView.context, android.R.layout.simple_spinner_item, chulsuk)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         holder.spinner.adapter = adapter
         holder.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -30,18 +40,17 @@ class btnclickadapter (var data: List<lecturestudentjsonclass>) : RecyclerView.A
                 id: Long
             ) {
                 val selectedChulsuk = chulsuk[pos]
-                // 선택된 항목에 대한 처리를 수행합니다.
+                if (selectedChulsuk != "") {
+                    var chulsukk = selectedChulsuk
+                    var whoareyou = item.student_id?.toString().toString()
+                    spinnerinterface.spinnerinterface(chulsukk, whoareyou)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // 아무 항목도 선택되지 않았을 때의 처리를 수행합니다.
             }
         }
-
-        val item = data[position]
-        holder.tv_hakbun.text = item.student_id?.toString()
-        holder.tv_name.text = item.student_name
-        holder.tv_result.text = item.attendence_mm_dd
     }
 
     override fun getItemCount(): Int {

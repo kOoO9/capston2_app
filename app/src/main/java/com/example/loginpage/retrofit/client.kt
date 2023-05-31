@@ -12,7 +12,7 @@ object client {
     fun getClient(): Retrofit? {
         if(retrofitClient == null){
             retrofitClient=Retrofit.Builder()
-                .baseUrl("http://192.168.0.101")
+                .baseUrl("http://192.168.0.241")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
         }

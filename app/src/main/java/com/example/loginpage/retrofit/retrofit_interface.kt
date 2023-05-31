@@ -18,3 +18,11 @@ interface studentinterface {
     ):
             Call<List<lecturestudentjsonclass>> //코드 전송하고 DB 받아오기
 }
+
+interface studentinformationinterface {
+    @FormUrlEncoded
+    @POST("student_information.php")
+    fun getData(@Field("student_id") student_id: String): Call<List<studentinformationjsonclass>> //학번 전송하고 학생 정보 받아오기
+}
+
+

@@ -10,3 +10,10 @@ data class lecturestudentjsonclass(
     val student_name : String?,
     val attendence_mm_dd : String?,
 )
+
+data class studentinformationjsonclass(
+    val student_id : Int?,
+    val student_name : String?,
+    val collegemajor : String?,
+    val imgurl : String?,
+)

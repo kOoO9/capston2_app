@@ -35,7 +35,7 @@ class student : AppCompatActivity() {
                 finish()
             }
 
-            //login(email, password)
+            login(email, password)
         }
     }
 
@@ -44,6 +44,7 @@ class student : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val intent: Intent = Intent(this, studentloginsuccess::class.java)
+                    intent.putExtra("email", email)
                     startActivity(intent)
                     finish()
                 } else {

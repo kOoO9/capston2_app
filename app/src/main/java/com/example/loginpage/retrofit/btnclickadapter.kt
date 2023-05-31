@@ -7,11 +7,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginpage.R
+import com.example.loginpage.studentloginsuccess
 
 class btnclickadapter (var data: List<lecturestudentjsonclass>, var spinnerinterface: spinnerinterface) : RecyclerView.Adapter<btnclickadapter.ViewHolder>() {
     val chulsuk = listOf("","출석", "결석", "지각")
@@ -51,6 +53,17 @@ class btnclickadapter (var data: List<lecturestudentjsonclass>, var spinnerinter
                 // 아무 항목도 선택되지 않았을 때의 처리를 수행합니다.
             }
         }
+
+
+        holder.tv_name.setOnClickListener {//학생 이름을 누르면 학생 사진, 전공, 이름, 학번 뜨게 하기
+            val context = holder.itemView.context
+            val intent = Intent(context, studentinformation::class.java)
+            intent.putExtra("student_id", item.student_id?.toString())
+            context.startActivity(intent)
+            //ContextCompat.startActivity(holder.tv_name.context, intent, null)
+        }
+
+
     }
 
     override fun getItemCount(): Int {

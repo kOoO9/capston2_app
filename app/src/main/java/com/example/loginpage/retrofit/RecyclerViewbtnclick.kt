@@ -26,9 +26,7 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
 
     private val idList: MutableList<String> = mutableListOf() //학번저장
     private val idwhere: MutableList<String> = mutableListOf() // 출석 결과 저장
-    //private var jsonArray = JSONArray()
     var jsonjson = "hi"
-//    val jsonjson: ArrayList<Data> = ArrayList()
 
     @RequiresApi(Build.VERSION_CODES.O)
 
@@ -91,11 +89,6 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
         button4.setOnClickListener {//출석 수정 버튼 누르면
             println("whoareyou : $idList $idwhere") //학번만 따로 리스트에 저장
 
-//            for ((i, j) in idList.zip(idwhere)) {
-//                // 반복할 코드
-//                convertListToJsonArray(i,j)
-//                println("뭐임 : $i $j")
-//            }
             convertListToJsonArray(idList,idwhere)
 
             perform(lectureCode,attendence_mm_dd, jsonjson)
@@ -105,7 +98,6 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
             idwhere.clear()
             jsonjson = "hi"
 
-            //jsonArray = JSONArray()
         }
     }
 
@@ -116,10 +108,7 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
             }
         }
         println("누구누구 : ${idList} $idwhere")
-        //convertListToJsonArray(idList,idwhere)
-        //convertListToJsonArray()
 
-        //this.chulsuk = idwhere
     }
 
 
@@ -160,21 +149,6 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
             })
         }
     }
-
-
-//    fun convertListToJsonArray(idList: MutableList<String>, idwhere: MutableList<String>) {
-//        for (i in 0 until idList.size) {
-//            val jsonObject = jsonArray.optJSONObject(i) ?: JSONObject()
-//            jsonObject.put("id", idList[i])
-//            jsonObject.put("result", idwhere[i])
-//            jsonArray.put(i, jsonObject)
-//        }
-//
-//        val jsonstring = jsonArray.toString()
-//        println("jsonstring : $jsonstring")
-//        //jsonArray = JSONArray()
-//
-//    }
 
 
     fun convertListToJsonArray(id: List<String>,result: List<String>){

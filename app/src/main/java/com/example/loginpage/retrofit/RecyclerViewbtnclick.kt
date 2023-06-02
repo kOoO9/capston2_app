@@ -58,17 +58,25 @@ class RecyclerViewbtnclick : AppCompatActivity(), spinnerinterface {
             val month = calendar.get(Calendar.MONTH)
             val day = calendar.get(Calendar.DAY_OF_MONTH)
 
+
             // DatePickerDialog 생성
             val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { _, selectedYear, selectedMonth, selectedDay ->
                 val selectedDate = "${selectedYear}-${selectedMonth + 1}-${selectedDay}"
                 button.text = selectedDate
                 textt.text = selectedDate
-                if(selectedMonth + 1 < 10){
+                if(selectedMonth + 1 < 10 && selectedDay > 10){
                     attendence_mm_dd = "attendence_0${selectedMonth + 1}_${selectedDay}"
+                }
+                else if(selectedMonth + 1 < 10 && selectedDay < 10){
+                    attendence_mm_dd = "attendence_0${selectedMonth + 1}_0${selectedDay}"
+                }
+                else if(selectedMonth + 1 > 10 && selectedDay < 10){
+                    attendence_mm_dd = "attendence_${selectedMonth + 1}_0${selectedDay}"
                 }
                 else{
                     attendence_mm_dd = "attendence_${selectedMonth + 1}_${selectedDay}"
                 }
+
                 dataList.clear()
                 idList.clear()
                 idwhere.clear()

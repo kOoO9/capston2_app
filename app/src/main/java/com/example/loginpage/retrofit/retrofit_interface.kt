@@ -1,5 +1,6 @@
 package com.example.loginpage.retrofit
 
+import android.text.Editable
 import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.http.*
@@ -24,5 +25,12 @@ interface studentinformationinterface {
     @POST("student_information.php")
     fun getData(@Field("student_id") student_id: String): Call<List<studentinformationjsonclass>> //학번 전송하고 학생 정보 받아오기
 }
+
+interface loginsuccessboolinterface {
+    @FormUrlEncoded
+    @POST("loginbool.php")
+    fun getData(@Field("who") who: String, @Field("id") id: String, @Field("pw") pw: String): Call<List<loginsuccessbooltionjsonclass>>
+}
+
 
 

@@ -62,8 +62,6 @@ class btnclickadapter (var data: List<lecturestudentjsonclass>, var spinnerinter
             context.startActivity(intent)
             //ContextCompat.startActivity(holder.tv_name.context, intent, null)
         }
-
-
     }
 
     override fun getItemCount(): Int {

@@ -17,3 +17,8 @@ data class studentinformationjsonclass(
     val collegemajor : String?,
     val imgurl : String?,
 )
+
+data class loginsuccessbooltionjsonclass(
+    val status : String?,
+    val message : String?,
+)

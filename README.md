@@ -1,1 +1,1 @@
-# JNU capstonㄷ_design2-application
+# JNU capston_design2-application

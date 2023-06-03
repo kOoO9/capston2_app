@@ -1,2 +1,1 @@
-# 전남대학교
-capston2-app
+# JNU capstonㄷ_design2-application
